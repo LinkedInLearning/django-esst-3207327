@@ -1,0 +1,11 @@
+<html>
+   
+   <body>
+      <h2>Von der View kommen diese Werte: {{werte}}</h2>
+      {% for x in werte %}
+         <h3 style=
+         'color: {% cycle "red" "green" "blue" %}'>{{ x }} {% cycle "red" "green" "blue" %}</h3>
+         {% endfor %}
+   </body>
+   
+</html>

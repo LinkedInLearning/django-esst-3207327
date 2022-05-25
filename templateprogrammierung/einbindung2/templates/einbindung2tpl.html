@@ -1,0 +1,14 @@
+<html>
+   
+   <body>
+      <h2>Von der View kommen dieser Wert: {{wert}}</h2>
+      {% if wert < 30 %}
+         {% include 'einbindung2tbl2.html' %} 
+      {% elif wert < 60 %}
+         {% include 'einbindung2tbl3.html' %} 
+      {% else %}
+         {% include 'einbindung2tbl4.html' %} 
+      {% endif %}     
+   </body>
+   
+</html>

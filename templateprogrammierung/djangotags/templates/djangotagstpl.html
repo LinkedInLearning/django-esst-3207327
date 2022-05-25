@@ -1,0 +1,18 @@
+<html>
+   
+   <body>
+      <h2>Von der View kommen diese Werte: {{werte}}</h2>
+      {% for x in werte %}
+         <h3>{{ x }}</h3>
+         {% if x > 10 %}
+            <h3>Hallo</h3>
+         {% else %}
+         <h3>Holla</h4>
+         {% endif %}
+      {% endfor %}
+
+      
+
+   </body>
+   
+</html>
