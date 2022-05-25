@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Mitgliederverwaltung mit Django</h1>
+<table>
+<tr><th>Mitgliedsnummer</th><th>Vorname</th><th>Nachname</th><th>E-Mail-Adresse</th></tr>
+{% for x in mitglieder %}
+<tr>
+<td>{{ x.mitgliedsnr }}</td>
+<td>{{ x.vname }}</td>
+<td>{{ x.nname }}</td>
+<td>{{ x.email }}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

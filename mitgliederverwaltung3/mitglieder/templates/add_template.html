@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!--  CSS 	-->
+
+    <link href="{% static "lib/css/mitglieder.css" %}" rel="stylesheet" type="text/css">
+	<title></title>
+</head>
+<body>
+
+<h1>Mitgliederverwaltung mit Django</h1>
+<h2>Hinzufügen von Mitgliedern</h2>
+<form action="addrecord/" method="post">
+{% csrf_token %}
+<span>Vorname:</span>
+<input name="vname">
+<br />
+<span>Nachname:</span>
+<input name="nname">
+</br />
+<span>E-Mail:</span>
+<input name="email">
+</br />
+<span>Mitgliedsnummer:</span>
+<input name="mitgliedsnr">
+<br />
+<input type="submit">
+</form>
+</body>
+</html>

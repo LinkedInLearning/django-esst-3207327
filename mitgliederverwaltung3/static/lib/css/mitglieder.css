@@ -1,0 +1,18 @@
+body{
+	background:lightgray;
+}
+h1,h2
+{
+	text-align:center;
+}
+span{
+display:inline-block;
+min-width:150px;
+background:white;
+}
+td{
+	min-width:150px;
+}
+th{
+	background:white;
+}

@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!--  CSS 	-->
+
+    <link href="{% static "lib/css/mitglieder.css" %}" rel="stylesheet" type="text/css">
+	<title></title>
+</head>
+<body>
+
+<h1>Mitgliederverwaltung mit Django</h1>
+<table>
+<tr><th>Mitgliedsnummer</th><th>Vorname</th><th>Nachname</th><th>E-Mail-Adresse</th><th>Löschen</th><th>Aktualisieren</th></tr>
+{% for x in mitglieder %}
+<tr>
+<td>{{ x.mitgliedsnr }}</td>
+<td>{{ x.vname }}</td>
+<td>{{ x.nname }}</td>
+<td>{{ x.email }}</td>
+<td><a href="delete/{{ x.mitgliedsnr }}">Mitglied löschen</a></td>
+<td><a href="update/{{ x.mitgliedsnr }}">Mitglied aktualisieren</a></td>
+</tr>
+{% endfor %}
+</table>
+<p>
+<a href="add/">Mitglied hinzufügen</a>
+</p>
+</body>
+</html>

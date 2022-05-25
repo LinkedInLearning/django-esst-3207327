@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Wetter mit Django</title>
+
+</head>
+
+<body>
+  <div style="width:500px;margin:auto;">
+    <h1 style="background: green; color: white;text-align:center">Das aktuelle Wetter</h1>
+   <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="karte" src="https://www.openstreetmap.org/export/embed.html?bbox=8.388040065765383%2C50.13068923545457%2C8.415613174438478%2C50.14349361006846&amp;layer=mapnik" style="border: 1px solid black"></iframe>
+    {% if country_code and lat and lon and temp and pressure and humidity %}
+	<script>
+	document.getElementById("karte").src=(
+	"https://www.openstreetmap.org/export/embed.html?bbox="
+	  + ( {{lon}} *0.9995) + "%2C" + ({{lat}} * 0.9995)+ "%2C" 
++ ({{lon}}*1.0005)	 +  "%2C" + ({{lat}} * 1.0005)+ "&amp;layer=mapnik&amp;marker="+{{lon}} + "%2C" + {{lat}}) 
+  </script>
+
+    {% endif %}
+   
+  
+   <hr />
+    <form method="post">
+      {% csrf_token %}
+      <div>
+        <input type="text" class="form-control" name="city" placeholder="Search">
+        <div>
+          <input type="submit" />
+        </div>
+        <form>
+  
+  <div>
+    {% if country_code and lat and lon and temp and pressure and humidity %}
+    <div>
+      
+        <h5>Breite, Länge : {{lat}}, {{lon}}</h5>
+        <h5>Temperatur : {{temp}}</h5>
+        <h5>Druck : {{pressure}} </h5>
+        <h5>Feuchtigkeit : {{humidity}}</h5>
+		<h5>Ländercode : {{country_code}}</h5>
+    </div>
+
+
+    {% endif %}
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!--  CSS 	-->
+
+    <link href="{% static "lib/css/mitglieder.css" %}" rel="stylesheet" type="text/css">
+	<title></title>
+</head>
+<body>
+
+
+<h1>Mitgliederverwaltung mit Django</h1>
+<h2>Aktualisierung von Mitgliedern</h2>
+<form action="updaterecord/{{ mitglied.mitgliedsnr }}" method="post">
+{% csrf_token %}
+<span>Vorname:</span>
+<input name="vname" value="{{ mitglied.vname }}">
+<br />
+<span>Nachname:</span>
+<input name="nname" value="{{ mitglied.nname }}">
+</br />
+<span>E-Mail:</span>
+<input name="email" value="{{ mitglied.email }}">
+</br />
+<span>Mitgliedsnummer:</span>
+<input name="mitgliedsnr" value="{{ mitglied.mitgliedsnr }}">
+<br />
+<input type="submit">
+</form>
+</body>
+</html>
